@@ -1,0 +1,287 @@
+@import '@/assets/css/config.scss';
+.desktop-layout {
+  background: #f6f8f9;
+  color: #353535;
+  display: flex;
+  padding: 30px 0 0;
+  &:after {
+    content: '\200B';
+    display: block;
+    height: 0;
+    clear: both;
+  }
+  .desktop-layout_side {
+    width: 250px;
+    // position: absolute;
+    // transition: margin 0.3s, width 0.3s;
+    transition: all 0.3s
+  }
+  .hide_side{
+    // display: none;
+    width:0;
+  }
+  .desktop-layout_main {
+    flex: 1;
+    overflow: hidden;//element ui table自适应
+    // width: 0;
+  }
+  .desktop-menu-constainer {
+    // width: 250px;
+    margin-top: -14px;
+  }
+  // 父菜单样式
+  .desktop-menu {
+    padding: 0;
+    list-style-type: none;
+    .desktop-menu-plugin {
+      padding: 8px 0 12px 81px;
+      font-size: 14px;
+      > a {
+        display: inline-block;
+        border: 2px dashed #d9dadc;
+        padding: 8px 12px;
+        color: #353535;
+        text-decoration: none;
+        .iconfont{
+          color: #929292;
+          // font-size: 18px;
+        }
+        &:hover{
+          border: 2px dashed #b2b2b2;
+          .iconfont{
+            color: #353535;
+          }
+        }
+
+      }
+    }
+    .desktop-menu-item {
+      position: relative;
+      padding: 8px 0;
+      line-height: 1.6;
+      &:before {
+        content: ' ';
+        position: absolute;
+        bottom: 0;
+        left: 92px;
+        width: 43%;
+        border-top: 1px solid #e4e8eb;
+      }
+      &:last-child::before {
+        display: none;
+      }
+      .desktop-menu-link {
+        padding-left: 60px;
+        padding-right: 20px;
+        font-size: 18px;
+        line-height: 50px;
+        color: #222;
+        display: block;
+        .iconfont {
+          width: 20px;
+          text-align: center;
+          margin-right: 12px;
+          // font-weight: bold;
+          font-size: 20px;
+          color: #555;
+        }
+        .desktop-menu-name {
+          display: block;
+          width: auto;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          word-wrap: normal;
+          position: relative;
+        }
+      }
+    }
+    a.desktop-menu-link {
+      &.current {
+        color: $mainColor;
+        .iconfont {
+          color: $mainColor;
+        }
+      }
+      &:hover {
+        cursor: pointer;
+        text-decoration: none;
+        background-color: rgba(0, 0, 0, 0.03);
+      }
+    }
+  }
+  // 子菜单的样式
+  .desktop-sub-menu {
+    .desktop-sub-menu-item {
+      .desktop-menu-link {
+        line-height: 36px;
+        padding-left: 92px;
+        font-size: 14px;
+      }
+    }
+  }
+
+  // 主body样式
+  .desktop-layout_main_area {
+    // padding: 0 4% 0 2%;
+    padding: 0 60px 0 30px;
+    max-width: 1600px;
+    min-height: 66vh;
+    margin-left: auto;
+    margin-right: auto;
+    .desktop-layout_main_hd {
+      margin-bottom: 20px;
+      position: relative;
+      display: flex;
+      // .extra_info {
+        // position: absolute;
+        // top: 4px;
+        // right: 0;
+        // z-index: 10;
+        // padding-right: 10px;
+      // }
+    }
+    .desktop-page_title {
+      font-size: 26px;
+      font-weight: 400;
+      line-height: 1;
+      // margin-bottom: 20px;
+      flex: 1;
+      .sub_title{
+        font-size: 14px;
+        color: #606266;
+        margin-left:20px;
+      }
+      .desktop-page_title_icon{
+        font-size: 24px;
+        padding-right: 6px;
+        color: #555;
+      }
+      &.flex{
+        display: flex;
+        align-items: center;
+      }
+      .return-pre {
+        margin-left: 10px;
+        .el-button{
+          vertical-align: bottom;
+          padding: 5px 5px;
+        }
+      }
+    }
+
+    .desktop-panel {
+      box-sizing:border-box;
+      // width: 100%;
+      padding: 24px 40px;
+      margin-bottom: 30px;
+      background-color: #fff;
+      border-radius: 3px;
+      -moz-border-radius: 3px;
+      -webkit-border-radius: 3px;
+      -webkit-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.05);
+      box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.05);
+
+      &.templateListEmpty{
+        min-height: 300px;
+        text-align: center;
+        padding-top: 100px;
+        box-sizing: border-box;
+      }
+
+      .desktop-panel_hd{
+        padding: 16px 0;
+      }
+      .desktop-panel_title {
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 1;
+      }
+
+    }
+  }
+  .search-constainer {
+    border: 1px $dashedColor dashed;
+    padding: 15px 10px 0 10px;
+    margin: 5px 0 10px 0;
+  }
+  .table-constainer {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    .table-list{
+      width: 100%;
+    }
+    .table-bd {
+      .table-bd_left {
+        float: left;
+        padding: 10px 0;
+      }
+      .table-bd_right {
+        float: right;
+        padding: 10px 0;
+      }
+    }
+  }
+  .page-constainer {
+    margin-top: 20px;
+    display:flex;
+    .page-control{
+      flex:1;
+      text-align: right;
+    }
+  }
+  /***  element ui 样式重写 ****/
+  .el-dropdown-link {
+    font-size: 12px;
+    margin-left: 5px;
+  }
+  .el-table thead{
+    color:#444;
+    font-weight:400;
+  }
+  .el-table th>.cell{
+    font-weight:400;
+  }
+
+  .el-tabs__item{
+    // font-size:15px;
+    font-weight: 400;
+  }
+
+  .el-table--medium td{
+    padding: 5px 0;
+  }
+}
+
+@media screen and (max-width:1200px) {
+  .desktop-layout .desktop-layout_side{
+    width: 200px;
+    transition: transform 0.3s;
+  }
+  // .desktop-layout .desktop-menu-constainer{
+  //   width: 200px;
+  // }
+
+ 
+  
+  .desktop-layout .desktop-menu .desktop-menu-item {
+    &:before {
+      left: 62px;
+    }
+  }
+  .desktop-layout .desktop-menu .desktop-menu-item .desktop-menu-link{
+    padding-left: 30px;
+    padding-right: 10px;
+  }
+  .desktop-layout .desktop-sub-menu .desktop-sub-menu-item .desktop-menu-link{
+    padding-left: 62px;
+  }
+  .desktop-layout .desktop-layout_main_area{
+    // padding:0 3% 0 1.5%;
+    padding:0 30px 0 10px;
+  }
+}
+
+
+
